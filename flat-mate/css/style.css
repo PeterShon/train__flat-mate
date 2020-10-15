@@ -407,9 +407,9 @@ select {
 
 .header__login-about.__mini {
   opacity: 0;
-  -webkit-transform: translate(65vw);
-      -ms-transform: translate(65vw);
-          transform: translate(65vw);
+  -webkit-transform: translate(75vw);
+      -ms-transform: translate(75vw);
+          transform: translate(75vw);
 }
 
 .header__login-btn {
@@ -422,9 +422,9 @@ select {
 
 .header__login-btn.__mini {
   opacity: 0;
-  -webkit-transform: translate(65vw);
-      -ms-transform: translate(65vw);
-          transform: translate(65vw);
+  -webkit-transform: translate(75vw);
+      -ms-transform: translate(75vw);
+          transform: translate(75vw);
 }
 
 /*MEDIA QUERIES*/
@@ -663,6 +663,7 @@ select {
 /* Landscape phones and smaller */
 
 .about {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -670,6 +671,33 @@ select {
       justify-content: space-around;
   padding-top: 5vw;
   padding-bottom: 7vw;
+}
+
+.about__line-wrapper {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2vw 0;
+}
+
+.about__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .about__img {
@@ -688,6 +716,36 @@ select {
       -ms-transform: translateX(0vw);
           transform: translateX(0vw);
   opacity: 1;
+}
+
+.about__buttons {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.about__btn {
+  width: calc(40px + 2.0vw);
+  overflow: hidden;
+}
+
+.about__btn:not(:first-child) {
+  margin-top: 3.5vw;
+}
+
+.about__btn:first-child:hover {
+  -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  -webkit-box-shadow: 0 0 10px 0 #57b287;
+          box-shadow: 0 0 10px 0 #57b287;
+}
+
+.about__btn:last-child:hover {
+  -webkit-transform: scale(0.93);
+      -ms-transform: scale(0.93);
+          transform: scale(0.93);
+  -webkit-box-shadow: 0 0 10px 0 #57b287;
+          box-shadow: 0 0 10px 0 #57b287;
 }
 
 .about__article {
@@ -727,7 +785,19 @@ select {
 }
 
 .about__text-wrap {
-  margin-top: 2vw;
+  margin-top: 1.5vw;
+  margin-bottom: -.5vw;
+}
+
+.about__paragraph-wrapper {
+  margin: .5vw 0;
+}
+
+.about__paragraph-wrapper.__anim-item.__active .__to-show {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
 }
 
 .about__paragraph {
@@ -738,43 +808,6 @@ select {
   -webkit-transition: 1s .5s;
   -o-transition: 1s .5s;
   transition: 1s .5s;
-}
-
-.about__paragraph.__anim-item.__active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
-}
-
-.about__buttons {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-.about__btn {
-  width: calc(40px + 2.0vw);
-  overflow: hidden;
-}
-
-.about__btn:not(:first-child) {
-  margin-top: 3.5vw;
-}
-
-.about__btn:first-child:hover {
-  -webkit-transform: rotate(-15deg);
-      -ms-transform: rotate(-15deg);
-          transform: rotate(-15deg);
-  -webkit-box-shadow: 0 0 10px 0 #57b287;
-          box-shadow: 0 0 10px 0 #57b287;
-}
-
-.about__btn:last-child:hover {
-  -webkit-transform: scale(0.93);
-      -ms-transform: scale(0.93);
-          transform: scale(0.93);
-  -webkit-box-shadow: 0 0 10px 0 #57b287;
-          box-shadow: 0 0 10px 0 #57b287;
 }
 
 /*MEDIA QUERIES*/
@@ -789,8 +822,16 @@ select {
 
 /* Landscape phones and smaller */
 
+.slick-list,
+.slick-track,
+.slick-track > .slick-slide div,
+.slider-item {
+  height: 100%;
+}
+
 .slider {
   margin-top: 5vw;
+  max-height: 70vh;
 }
 
 .slider__body {
@@ -814,8 +855,17 @@ select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   height: 100%;
+}
+
+.slider__top {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 1px;
+          flex: 1 0 1px;
 }
 
 .slider__text-wrap {
@@ -1312,15 +1362,15 @@ select {
 }
 
 .logo__rails.__mini {
-  -webkit-transform: translate(65vw);
-      -ms-transform: translate(65vw);
-          transform: translate(65vw);
+  -webkit-transform: translate(70vw);
+      -ms-transform: translate(70vw);
+          transform: translate(70vw);
 }
 
 .logo__rails.__mini:hover {
-  -webkit-transform: translate(57vw);
-      -ms-transform: translate(57vw);
-          transform: translate(57vw);
+  -webkit-transform: translate(65vw);
+      -ms-transform: translate(65vw);
+          transform: translate(65vw);
 }
 
 .logo__rails.__mini:hover:after {
@@ -1394,9 +1444,9 @@ select {
 
 .logo__txt.__mini {
   opacity: 0;
-  -webkit-transform: translate(65vw);
-      -ms-transform: translate(65vw);
-          transform: translate(65vw);
+  -webkit-transform: translate(70vw);
+      -ms-transform: translate(70vw);
+          transform: translate(70vw);
 }
 
 /*MEDIA QUERIES*/
@@ -1475,6 +1525,12 @@ select {
           transform: scale(1);
 }
 
+.card__header.__anim-item.__active + .__to-show {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
 .card__header--theme-green {
   background-color: #58ad52;
 }
@@ -1501,12 +1557,6 @@ select {
   transition: .5s;
 }
 
-.card__body.__anim-item.__active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-}
-
 .card__body--theme-green {
   background-color: #deebde;
 }
@@ -1523,8 +1573,16 @@ select {
   margin-top: calc(25px + 1.5vw);
 }
 
+.card__info.__anim-item.__active .__to-show {
+  opacity: 1;
+}
+
 .card__info-text {
   text-align: center;
+  opacity: 0;
+  -webkit-transition: 2.0s;
+  -o-transition: 2.0s;
+  transition: 2.0s;
 }
 
 .card__btn {
@@ -2061,15 +2119,15 @@ select {
   }
 
   .logo__rails.__mini {
-    -webkit-transform: translate(67vw);
-        -ms-transform: translate(67vw);
-            transform: translate(67vw);
+    -webkit-transform: translate(70vw);
+        -ms-transform: translate(70vw);
+            transform: translate(70vw);
   }
 
   .logo__rails.__mini:hover {
-    -webkit-transform: translate(67vw);
-        -ms-transform: translate(67vw);
-            transform: translate(67vw);
+    -webkit-transform: translate(70vw);
+        -ms-transform: translate(70vw);
+            transform: translate(70vw);
   }
 
   .logo__rails.__mini:hover:after {
@@ -2081,9 +2139,9 @@ select {
 
   .logo__txt.__mini {
     opacity: 0;
-    -webkit-transform: translate(67vw);
-        -ms-transform: translate(67vw);
-            transform: translate(67vw);
+    -webkit-transform: translate(70vw);
+        -ms-transform: translate(70vw);
+            transform: translate(70vw);
   }
 
   .card__body {

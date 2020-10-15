@@ -3020,10 +3020,11 @@ $(document).ready(function () {
       swipeToSlide: true,
       speed: 300,
       focusOnSelect: true,
-      autoplay: true,
+      //autoplay: true,
       autoplaySpeed: 4000,
       fade: true,
-      initialSlide: 2
+      initialSlide: 2,
+      //adaptiveHeight: true
    });
 })
 // загрузка кода JavaScript API проигрывателя IFrame
@@ -3103,20 +3104,19 @@ if (animItems.length > 0) {
          const animItem = animItems[index];
          const animItemHight = animItem.offsetHeight;
          const animItemOffset = offset(animItem).top;
-         const animStart = 4;
+         const animStart = 6;
 
-         //создание точки анимации, при значении animStart = 4, точка анимации - при 1/4 высоты объекта
+         //создание точки анимации, при значении animStart = 4, точка анимации - при 1/10 высоты объекта
          let animItemPoint = window.innerHeight - animItemHight / animStart;
 
          //проверка, если анимированный объект выше высоты окна браузера
          if (animItemHight > window.innerHeight) {
             animItemPoint = window.innerHeight - window.innerHeight / animStart;
          }
-
          //Добавление или удаление класса '__active' объекту
          if ((pageYOffset > animItemOffset - animItemPoint)
             &&
-            (pageYOffset < (animItemOffset + (animItemHight - (animItemHight / animStart))))) {
+            pageYOffset < (animItemOffset + animItemHight)) {
             animItem.classList.add('__active');
          } else {
             //доп условие: при отсутсвии класса-заглушки повтора анимации '__active' не будет снят
@@ -3129,10 +3129,9 @@ if (animItems.length > 0) {
 
    //функциия позволяет получить позицию объекта относительно верха или левой стороны объекта window
    function offset(e1) {
-      const
-         rect = e1.getBoundingClientRect(),
+      const rect = e1.getBoundingClientRect(),
          scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-         scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
    }
 
