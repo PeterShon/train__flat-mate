@@ -1,0 +1,87 @@
+.price {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: stretch;
+
+   padding: 9.6vw 0;
+   &__header {
+      text-align: center;
+   }
+   &__text-wrap {
+      margin-top: 2vw;
+      width: 47vw;
+   }
+   &__paragraph {
+      text-align: center;
+   }
+   &__cards {
+      display: flex;
+      align-self: stretch;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      margin: 2vw -1.5vw -1.5vw;
+   }
+   &__card {
+      flex: 1 1 19.6vw;
+      margin: 1.5vw;
+   }
+}
+
+/*MEDIA QUERIES*/
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+   .price {
+      &__text-wrap {
+         width: 55vw;
+      }
+      &__cards {
+      }
+      &__card {
+         flex: 1 1 21vw;
+      }
+   }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+   .price {
+      &__text-wrap {
+         width: 60vw;
+      }
+      &__cards {
+      }
+      &__card {
+         flex: 1 1 21vw;
+      }
+   }
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+   .price {
+      &__text-wrap {
+         width: 70vw;
+      }
+      &__cards {
+      }
+      &__card {
+         flex: 1 1 27vw;
+      }
+   }
+}
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+   .price {
+      &__text-wrap {
+         width: 85vw;
+      }
+      &__cards {
+      }
+      &__card {
+         flex: 1 1 32vw;
+      }
+   }
+}

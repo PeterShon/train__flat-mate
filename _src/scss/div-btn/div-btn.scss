@@ -1,0 +1,59 @@
+.div-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+
+   transition: 0.3s;
+   &__link {
+   }
+   &__text {
+      transform: scale(0);
+      opacity: 0;
+      transition: .5s .0s;
+      &.__anim-item.__active {
+         transform: scale(1);
+         opacity: 1;
+      }
+   }
+   &--login {
+      border-radius: 16.5px;
+      background-color: #3d4b60;
+      padding: calc(5px + 0.7vw) calc(4px + 1vw);
+      &:hover {
+         background-color:  #27303d;
+      }
+   }
+   &--read_more {
+      border-radius: 15px;
+      background-color: #67bf95;
+      padding: calc(4px + 1vw) calc(5px + 2.3vw);
+      &:hover {
+         background-color:rgb(89, 165, 128);
+      }
+   }
+   &--circle {
+      border-radius: 50%;
+   }
+   &--for-card {
+      background-color: #4b596c;
+      padding: calc(10px + 1.3vw) 0;
+      &:hover {
+         background-color: #343d4b;
+      }
+      &_theme {
+         &-green {
+            background-color: #58ad52;
+            &:hover {
+               background-color: #3e7a3a;
+            }
+         }
+         &-blue {
+               background-color: #52a1ad;
+               &:hover {
+                  background-color: #396f77;
+               }
+         }
+      }
+   }
+}

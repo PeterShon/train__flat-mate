@@ -1,0 +1,15 @@
+.section {
+   position: relative;
+   
+   width: 100%;
+   & .picture {
+   }
+   &__background {
+   }
+   &__wrapper {
+      position: relative;
+   }
+   &__inner {
+      
+   }
+}

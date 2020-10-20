@@ -3148,7 +3148,7 @@ var start = document.querySelector('#start');
 setFunc(header);
 //обработка события onScroll
 window.addEventListener('scroll', function () {
-   if (window.visualViewport.width * 0.105 > window.scrollY) {
+   if (document.documentElement.clientWidth * 0.105 > window.scrollY) {
       header.forEach(i => i.shower());
    } else {
       header.forEach(i => i.hider());

@@ -1,0 +1,140 @@
+//fix slick height
+//важно задать фиксированную высоту родительскому элементу
+.slick-list, .slick-track, .slick-track > .slick-slide div, .slider-item {
+   height: 100%;
+}
+
+.slider {
+   margin-top: 5vw;
+   max-height: 80vh;
+   &__body {
+      min-width: 0; //slider-fix
+   }
+   & .slick-active {
+      & .slider__img {
+         transform: scale(1.05);
+      }
+   }
+   &__item-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      height: 100%;
+   }
+   &__top {
+      flex: 1 0 1px;
+   }
+   &__header {
+   }
+   &__text-wrap {
+      margin-top: 1vw;
+   }
+   &__paragraph {
+   }
+   &__img-wrapper {
+      margin-top: 3vw;
+      height: 26vw;
+      width: 100%;
+
+      border-top-left-radius: 19px;
+      border-top-right-radius: 19px;
+      overflow: hidden;
+   }
+   &__img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+      object-position: center;
+      transition: 4s;
+   }
+   & .slick {
+      &-arrow {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         position: absolute;
+         border-radius: 50%;
+         
+         width: calc(40px + 1vw); height: calc(40px + 1vw);
+         top: calc(50% - 5vw);
+         border: 3px solid #b3dbc8;
+         background-color: #ffffff00;
+         outline: none;
+
+         font-size: 0;
+
+         transition: 0.3s;
+         &:hover {
+            cursor: pointer;
+            background-color: #5ca884;
+            transform: scale(1.1);
+            box-shadow: 0 0 3px 0px #b3dbc8, inset 0 0 10px -5px #455469;
+         }
+         &::after {
+            position: relative;
+            display: block;
+            top: -0.35vw;
+            font-size: calc(14px + 2.9vw);
+            color: #b3dbc8;
+            
+         }
+      }
+      &-prev {
+         left: calc(-10px - 8.0vw);
+         &::after {
+            content: '‹';
+         }
+      }
+      &-next {
+         right: calc(-10px - 8.0vw);
+         &::after {
+            content: '›';
+         }
+      }
+   }
+}
+
+/*MEDIA QUERIES*/
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+   .slider {
+      & .slick {
+         &-arrow {
+            z-index: 2;
+         }
+         &-prev {
+            left: calc(+10px - 0vw);
+            &::after {
+               content: '‹';
+            }
+         }
+         &-next {
+            right: calc(+10px - .0vw);
+            &::after {
+               content: '›';
+            }
+         }
+      }
+   }
+}
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
+}

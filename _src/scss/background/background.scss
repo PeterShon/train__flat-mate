@@ -1,0 +1,40 @@
+.background {
+   position: absolute;
+   width: 100%;height: 100%;
+      &__image {
+      position: fixed;
+
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+   }
+   &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;height: 100%;
+      background: rgba($color: #455469, $alpha: .95);
+   }
+   &--white {
+      &::after {
+         background: rgba($color: #f6f6f7, $alpha: 1.0);
+      }
+   }
+   &--slider {
+      &::after {
+         background: rgba($color: #52ad81, $alpha: 1.0);
+      }
+   }
+   &--price {
+      &::after {
+         background: rgba($color: #f6f6f7, $alpha: 1.0);
+      }
+   }
+   &--feedback {
+      &::after {
+         background: rgba($color: #2d3136, $alpha: 1.0);
+      }
+   }
+}
+

@@ -1,0 +1,33 @@
+.socnets {
+   display: flex;
+   justify-content: flex-end;
+   &__item-wrapper {
+      width: calc(20px + 2vw);
+      height: calc(20px + 2vw);
+      border-radius: 50%;
+      border: 3px solid #454648;
+      overflow: hidden;
+
+      transition: 1s;
+      &:hover {
+         border: 3px solid  #be393b;
+         & .socnets__img {
+            color: #be393b;
+         }
+      }
+      &:not(:last-child) {
+         margin-right: calc(10px + 3vw);
+      }
+   }
+   &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 100%;
+   }
+   &__img {
+      transition: 1s;
+   }
+}
