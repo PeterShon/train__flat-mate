@@ -14,6 +14,8 @@ let path = {
       js: project_folder + '/js/',
       img: project_folder + '/img/',
       fonts: project_folder + '/fonts/',
+      php: project_folder + '/',
+      modules: project_folder + '/modules/'
    },
    //пути входа
    src: {
@@ -22,6 +24,8 @@ let path = {
       js: source_folder + '/js/script.js',
       img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
       fonts: source_folder + '/fonts/*.ttf',
+      php: source_folder + '/*.php',
+      modules: source_folder + '/modules/**/*.*',
    },
    //пути к файлам, которые нужно "слушать"
    watch: {
@@ -30,6 +34,7 @@ let path = {
       js: source_folder + '/js/**/*.js',
       img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
       fonts: source_folder + '/fonts/*.ttf',
+      php: source_folder + '/*.php'
    },
    //путь к папке проекта, объект отвечает за удаление
    clean: './' + project_folder + '/'
@@ -147,6 +152,18 @@ function fonts(params) {
       .pipe(dest(path.build.fonts));
 }
 
+function php() {
+   return src(path.src.php)
+      .pipe(dest(path.build.php))
+      .pipe(browsersync.stream())
+}
+
+function modules() {
+   return src(path.src.modules)
+      .pipe(dest(path.build.modules))
+      .pipe(browsersync.stream())
+}
+
 //вызов в терминале с помощью команды gulp otf2ttf
 gulp.task('otf2ttf', function () {
    return src([source_folder + '/fonts/*.otf'])
@@ -189,9 +206,10 @@ function watchFiles(params) {
    gulp.watch([path.watch.css], css);
    gulp.watch([path.watch.js], js);
    gulp.watch([path.watch.img], images);
+   gulp.watch([path.watch.php], php);
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, images, js, css, html), fontsStyle, fonts);
+let build = gulp.series(clean, gulp.parallel(fonts, images, js, css, html, php, modules), fontsStyle, fonts);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 //подружить переменные с gulp
@@ -200,6 +218,7 @@ exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
 exports.css = css;
+exports.php = php;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;

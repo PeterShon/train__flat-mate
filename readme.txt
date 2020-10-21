@@ -8,7 +8,7 @@
 2. Команда "npm cache clean --force";
 3. Команда "npm i npm -g"
 
-
+//для восстановления проекта нужны папка '_src', файлы package.json и gulpfile.js
 //подключение файлов по команде @@include('_header.html')
 //html файлы отличные от index.html пишутся через нижнее подчёркивание
 

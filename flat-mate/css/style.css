@@ -127,6 +127,31 @@ select {
 
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 
+@-webkit-keyframes autofill {
+  to {
+    color: #fff;
+    background: transparent;
+  }
+}
+
+/* Change Autocomplete styles in Chrome*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .link {
   text-decoration: none;
   font-size: 16px;
@@ -477,6 +502,30 @@ select {
 
 .background--feedback::after {
   background: #2d3136;
+  font-size: 0;
+}
+
+.background--feedback::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0vw;
+  width: 100%;
+  height: 100%;
+  background: url(../img/feedback/gif2.gif) center/10vw no-repeat, rgba(51, 35, 35, 0.8);
+  font-size: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.background--feedback.__sending::before {
+  opacity: 1;
+  visibility: visible;
 }
 
 .section {
@@ -1100,6 +1149,7 @@ select {
 }
 
 .feedback__form {
+  position: relative;
   width: 100%;
   margin-top: 4vw;
 }
@@ -1186,6 +1236,34 @@ select {
   transition: .5s;
 }
 
+.feedback__input:-webkit-autofill {
+  border: solid 1px rgba(255, 255, 255, 0.52);
+  -webkit-text-fill-color: #afa2a2;
+  -webkit-box-shadow: 0 0 0px 1000px  #34383c inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.feedback__input:-webkit-autofill:hover {
+  border: solid 1px rgba(255, 255, 255, 0.52);
+  -webkit-text-fill-color: #afa2a2;
+  -webkit-box-shadow: 0 0 0px 1000px  #34383c inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.feedback__input:-webkit-autofill:focus {
+  border: solid 1px rgba(255, 255, 255, 0.52);
+  -webkit-text-fill-color: #afa2a2;
+  -webkit-box-shadow: 0 0 0px 1000px  #34383c inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.feedback__input.__error {
+  background-color: #332323;
+}
+
 .feedback__input:focus {
   border: solid 1px rgba(190, 57, 59, 0.49);
   background-color: #2f3136;
@@ -1211,6 +1289,14 @@ select {
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
+}
+
+.feedback__textarea.__error {
+  background-color: #332323;
+}
+
+.feedback__textarea.__error:focus {
+  background-color: #332323;
 }
 
 .feedback__textarea:hover {
@@ -2370,6 +2456,7 @@ select {
   }
 }
 @supports (-webkit-appearance:none){
+.background--feedback::before{background:url(../img/feedback/gif2.gif) center/10vw no-repeat, rgba(51, 35, 35, 0.8)}
 .player__pp{background:url(../img/video/play.webp) center/100% no-repeat}
 }
 

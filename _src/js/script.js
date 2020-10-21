@@ -3,3 +3,4 @@
 @@include('../js/player/player.js')
 @@include('../js/scroll/scroll.js')
 @@include('../js/header/header.js')
+@@include('../js/feedback/feedback.js')

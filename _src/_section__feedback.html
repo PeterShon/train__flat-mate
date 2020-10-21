@@ -10,32 +10,32 @@
                </div>
             </div>
          </div>
-         <form class="feedback__form" action="#">
+         <form class="feedback__form" id="form" action="#">
             <div class="feedback__inputs">
                <div class="feedback__input-wrap">
                   <div class="feedback__input-item">
                      <label class="feedback__input-label text text--alternate_001 text--medium_007"
                         for="feedback__input-name">Имя</label>
-                     <input class="feedback__input text text--alternate_001 text--medium_008" type="text"
-                        id="feedback__input-name">
+                     <input class="feedback__input text text--alternate_001 text--medium_008 __req" type="text"
+                        id="feedback__input-name" name='name'>
                   </div>
                   <div class="feedback__input-item">
                      <label class="feedback__input-label text text--alternate_001  text--medium_007"
                         for="feedback__input-email">E-Mail</label>
-                     <input class="feedback__input text text--alternate_001 text--medium_008" type="text"
-                        id="feedback__input-email">
+                     <input class="feedback__input text text--alternate_001 text--medium_008 __req __email" type="text"
+                        id="feedback__input-email" name='email'>
                   </div>
                </div>
                <div class="feedback__input-wrap">
                   <div class="feedback__input-item">
                      <label class="feedback__input-label text text--alternate_001  text--medium_007"
                         for="feedback__textarea-message">Сообщение</label>
-                     <textarea class="feedback__textarea text  text--alternate_001 text--medium_008" name="#"
-                        id="feedback__textarea-message" cols="30" rows="10"></textarea>
+                     <textarea class="feedback__textarea text  text--alternate_001 text--medium_008 __req"
+                        name="message" id="feedback__textarea-message" cols="30" rows="10"></textarea>
                   </div>
                </div>
                <div class="feedback__btn-wrapper">
-                  <button class="feedback__btn text text--medium_009">ОТПРАВИТЬ</button>
+                  <button class="feedback__btn text text--medium_009" type="submit">ОТПРАВИТЬ</button>
                </div>
             </div>
          </form>
