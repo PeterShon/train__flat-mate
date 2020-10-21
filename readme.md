@@ -1,7 +1,7 @@
 # TRAINING PROJECT
 ## NAME: DSM
 Screen:
-![Альтернативный текст](/source/background.jpg)
+![Альтернативный текст](_src/source/background.jpg)
 Languages: 
 * HTML;
 * CSS;
