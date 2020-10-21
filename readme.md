@@ -1,5 +1,5 @@
 # TRAINING PROJECT
-## NAME: DSM
+## NAME: FLAT-MATE
 Screen:
 ![Альтернативный текст](_src/source/background.jpg)
 Languages: 
