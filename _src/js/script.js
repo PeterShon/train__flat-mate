@@ -1,6 +1,0 @@
-@@include('../js/slick-1.8.1/slick/slick.js')
-@@include('../js/slider/slider.js')
-@@include('../js/player/player.js')
-@@include('../js/scroll/scroll.js')
-@@include('../js/header/header.js')
-@@include('../js/feedback/feedback.js')
